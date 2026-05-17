@@ -18,9 +18,24 @@ public class SelectionSortTest {
         System.out.println("Selection sort completed: " + Arrays.toString(arr));
     }
 
+    void selectionSortPractice(int[] arr) { //{3,1,2,5,4}
+
+        for (int i = 0; i < arr.length; i++) { //3
+            int minIndex = i;
+            for (int j = i; j < arr.length; j++) { //1
+                if(arr[j] < arr[minIndex]) { //1<3
+                    minIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+        System.out.println("Selection Sort completed: " +Arrays.toString(arr));
+    }
     public static void main(String[] args) {
         SelectionSortTest test = new SelectionSortTest();
-        test.selectionSort(new int[] {3,1,2,5,4});
-        test.selectionSort(new int[] {1,2,3,3,9,1,5});
+        test.selectionSortPractice(new int[] {3,1,2,5,4});
+        test.selectionSortPractice(new int[] {1,2,3,3,9,1,5});
     }
 }
